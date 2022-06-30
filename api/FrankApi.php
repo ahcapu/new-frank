@@ -7,15 +7,10 @@ class FrankApi
     }
 //    AWS
 
-    // private $baseUrl = 'https://frank.hitechprime.io/api/v1/';
+    // private $baseUrl = 'https://server.frankme.com/api/v1/';
 
 //    Local
    private $baseUrl = 'http://localhost:3008/api/v1/';
-
-//    Heroku
-//    private $baseUrl = 'https://p-post.herokuapp.com/api/v1/';
-
-//    private $baseUrl = 'http://18.193.69.136:3008/api/v1/';
 
     public function uploadImage($url, $data, $token = null, $method = "POST")
     {
