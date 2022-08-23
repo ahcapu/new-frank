@@ -32,7 +32,7 @@ const optional = document.querySelector("#delivery-address > div > section > div
 optional.style.display = "none";
 // console.log("name", deliveryAddress);
 
-deliveryAddress.setAttribute("required", true);
+// deliveryAddress.setAttribute("required", true);
 // let address = document.querySelector('#delivery-address > div > section > div:nth-child(7)');
 // address.style.display = 'block';
 document.body.innerHTML += `
