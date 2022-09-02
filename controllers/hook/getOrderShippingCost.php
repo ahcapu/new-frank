@@ -77,9 +77,7 @@ class FrankGetOrderShippingCostController
 
             $prodDetail[$i]['item'] = $prodArr[$i]['name'];
             $prodDetail[$i]['quantity'] = $prodArr[$i]['cart_quantity'];
-            $prodDetail[$i]['size'] = [
-                (float)$prodArr[$i]['width'], (float)$prodArr[$i]['height'], (float)$prodArr[$i]['depth'], (float)$prodArr[$i]['weight']
-            ];
+            $prodDetail[$i]['size'] = [(float)$prodArr[$i]['width'], (float)$prodArr[$i]['height'], (float)$prodArr[$i]['depth'], (float)$prodArr[$i]['weight']];
         }
         $data = array(
             'items' => $prodDetail

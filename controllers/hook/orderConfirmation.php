@@ -51,12 +51,9 @@ class FrankOrderConfirmationController
 
                 $prodDetail[$i]['item'] = $orderDetail[$i]['name'];
                 $prodDetail[$i]['quantity'] = (int)$orderDetail[$i]['quantity'];
-                $prodDetail[$i]['size'] = [
-                    (float)$orderDetail[$i]['width'], (float)$orderDetail[$i]['length'], (float)$orderDetail[$i]['height'], (float)$orderDetail[$i]['weight']
-                ];
+                $prodDetail[$i]['size'] = [(float)$orderDetail[$i]['width'], (float)$orderDetail[$i]['length'], (float)$orderDetail[$i]['height'], (float)$orderDetail[$i]['weight']];
                 $prodDetail[$i]['service'] = strtolower($carrierName[0]['carrier_name']);
                 $prodDetail[$i]['store'] = Configuration::get('FRANK_ID');
-
             }
 //            echo '<pre>'; print_r($prodDetail); die();
             $commodities = array();
@@ -66,6 +63,7 @@ class FrankOrderConfirmationController
                 $image = new Image($image['id_image']);
                 $product_photo = _PS_BASE_URL_._THEME_PROD_DIR_.$image->getExistingImgPath().".jpg";
                 $product_photo_array[] = $product_photo;
+                $orderDetail[$i]['commodity_price'] = sprintf('%.2f', Product::getPriceStatic((int)$orderDetail[$i]['id_product']));
                 $commodities[] = $this->array_push_assoc($orderDetail[$i], 'images', $product_photo_array[$i]);
             }
 
@@ -121,7 +119,7 @@ class FrankOrderConfirmationController
                     'storeOrderID' => $order->reference,
                     'store' => Configuration::get('FRANK_ID')
                 ];
-//            echo '<pre>'; print_r($result); die();
+        //    echo '<pre>'; print_r($result); die();
             $res = $this->frank_api->doCurlRequest('orders/addEcommerceOrder', $result, Configuration::get('FRANK_TOKEN'));
 //            echo '<pre>'; print_r($res); die();
     }

@@ -10,7 +10,7 @@ class FrankApi
     private $baseUrl = 'https://server.frankme.com/api/v1/';
 
 //    Local
-//    private $baseUrl = 'http://localhost:3008/api/v1/';
+//private $baseUrl = 'http://localhost:3008/api/v1/';
 
     public function uploadImage($url, $data, $token = null, $method = "POST")
     {
