@@ -63,12 +63,12 @@ class FrankOrderConfirmationController
                 $image = new Image($image['id_image']);
                 $product_photo = _PS_BASE_URL_._THEME_PROD_DIR_.$image->getExistingImgPath().".jpg";
                 $product_photo_array[] = $product_photo;
-                $orderDetail[$i]['commodity_price'] = sprintf('%.2f', Product::getPriceStatic((int)$orderDetail[$i]['id_product']));
                 $commodities[] = $this->array_push_assoc($orderDetail[$i], 'images', $product_photo_array[$i]);
             }
 
             $result =
                 [
+                    'price' => sprintf('%.2f', $price),
                     'type' => 'delivery',
                     'pickup' =>
                         [
