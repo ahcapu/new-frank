@@ -34,12 +34,18 @@ class FrankGetOrderShippingCostController
     public function getShippingCost($id_carrier, $delivery_service)
     {
         $shipping_cost = false;
-        if ($id_carrier == Configuration::get('FRANK_CLASSIC') && isset($delivery_service['Classic']))
-            $shipping_cost = (float)$delivery_service['Classic'];
-        if ($id_carrier == Configuration::get('FRANK_FLEX') && isset($delivery_service['Flex']))
-            $shipping_cost = (float)$delivery_service['Flex'];
-        if ($id_carrier == Configuration::get('FRANK_GREEN') && isset($delivery_service['Green']))
-            $shipping_cost = (float)$delivery_service['Green'];
+        if ($id_carrier == Configuration::get('FRANK_CLASSIC') && isset($delivery_service['classic'])) {
+            $shipping_cost = (float)$delivery_service['classic'];
+        }
+            
+        if ($id_carrier == Configuration::get('FRANK_FLEX') && isset($delivery_service['flex'])) {
+            $shipping_cost = (float)$delivery_service['flex'];
+        }
+            
+        if ($id_carrier == Configuration::get('FRANK_GREEN') && isset($delivery_service['green'])) {
+            $shipping_cost = (float)$delivery_service['green'];
+        }
+            
         return $shipping_cost;
     }
 

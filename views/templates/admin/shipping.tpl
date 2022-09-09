@@ -172,9 +172,9 @@
                                         <td class="col-sm-2">{$api_frank['pickupDate']|date_format:"%m/%d/%Y"}</td>
                                         <td class="col-sm-2">{$api_frank['dropoff']['country']}</td>
                                         <td class="col-sm-2">
-{*                                            <a href="{$orderDetails}" data-target="detail" data-id="{$api_frank['_id']}" class="pencil">*}
-{*                                                <i class="material-icons" style="font-size: 20px; ">create</i>*}
-{*                                            </a>*}
+                                           <a href="{$orderDetails}" data-target="detail" data-id="{$api_frank['_id']}" class="pencil">
+                                               <i class="material-icons" style="font-size: 20px; ">create</i>
+                                           </a>
                                         </td>
                                     </tr>
                                 {/if}
