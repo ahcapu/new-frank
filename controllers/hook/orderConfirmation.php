@@ -107,6 +107,7 @@ class FrankOrderConfirmationController
                             'number' => !empty($addressArray['phone']) ? $addressArray['phone'] : '',
                             'email' => $customer->email,
                             'countryCode' => $this->countryCode(pSQL($addressArray['country'])),
+                            'platform' => 'prestashop',
                         ],
 
                     'deliveryType' => strtolower($carrierName[0]['carrier_name']),
@@ -117,7 +118,7 @@ class FrankOrderConfirmationController
                     'priceImpact' => 20,
                     'orderNumber' => $twelve_digit,
                     'storeOrderID' => $order->reference,
-                    'store' => Configuration::get('FRANK_ID')
+                    'store' => Configuration::get('FRANK_ID'),
                 ];
         //    echo '<pre>'; print_r($result); die();
             $res = $this->frank_api->doCurlRequest('orders/addEcommerceOrder', $result, Configuration::get('FRANK_TOKEN'));

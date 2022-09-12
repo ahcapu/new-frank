@@ -33,9 +33,11 @@ class AdminFrankSettingsController extends ModuleAdminController
         $statics = $this->get_ahref('AdminFrankStatics');
         $settings = $this->get_ahref('AdminFrankSettings');
         parent::initContent();
+        // echo '<pre>'; print_r($api_email_addresses['data']['emailAddresses']); die();
         $this->context->smarty->assign(
             array(
                 'api_email_addresses' => $api_email_addresses['data']['emailAddresses'],
+                'store' => $api_email_addresses['data'],
                 'shipping' => $shipping,
                 'returns' => $returns,
                 'settings' => $settings,

@@ -8,18 +8,18 @@ require_once ('../api/FrankApi.php');
 
 $frank_api = new FrankApi();
 
-if (!empty($_POST['contact_person']) && !empty($_POST['phone']) && !empty($_POST['language'])) {
-    $params = array(
-        'contactDetail' => array(
-            'name' => $_POST['contact_person'],
-            'mobile' => $_POST['phone'],
-            'language' => $_POST['language']
-        ));
-    $res = $frank_api->doCurlRequest('stores/updateContactDetails', $params, Configuration::get('FRANK_TOKEN'));
-    echo $res;
-    exit;
-//    echo json_encode(['status' => 200]);
-}
+// if (!empty($_POST['contact_person']) && !empty($_POST['phone']) && !empty($_POST['language'])) {
+//     $params = array(
+//         'contactDetail' => array(
+//             'name' => $_POST['contact_person'],
+//             'mobile' => $_POST['phone'],
+//             'language' => $_POST['language']
+//         ));
+//     $res = $frank_api->doCurlRequest('stores/updateContactDetails', $params, Configuration::get('FRANK_TOKEN'));
+//     echo $res;
+//     exit;
+// //    echo json_encode(['status' => 200]);
+// }
 
 if (!empty($_POST['add_new_email_address']) && !empty($_POST['add_new_role'])) {
     $params = array(

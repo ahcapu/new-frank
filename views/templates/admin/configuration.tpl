@@ -141,6 +141,12 @@
 {*        Main form----------------------------------------------------------------------------------------------------------------------------*}
         <div id="p-body" class="panel-body p-body active">
             <form class="form-horizontal registration-form" method="post">
+            <div class="form-group">
+                    <label class="control-label col-sm-2" for="store_name">Store Name</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="store-name" placeholder="Enter store name" name="store_name" required>
+                    </div>
+                </div>
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="first_name">First Name</label>
                     <div class="col-sm-4">

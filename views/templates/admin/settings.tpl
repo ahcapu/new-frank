@@ -22,74 +22,134 @@
         <div class="row justify-content-around flex-column-reverse flex-xs-row flex-sm-row">
             <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 mt-5 pr-4 pb-4">
 
-{*                <div class="container-fluid bg-white pt-4 pb-4 pl-4 container-upload-logo">*}
-{*                    <p style="color: #e07047">Upload Logo</p>*}
-{*                    <form  class="upload-image-form" method="post" enctype="multipart/form-data">*}
-{*                        <div class="row">*}
-{*                            <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">*}
-{*                                <label for="">Upload image</label>*}
-{*                                <input type="file" name="upload_image" id="upload-image" class="form-control" accept="image/*">*}
-{*                            </div>*}
+                {*                <div class="container-fluid bg-white pt-4 pb-4 pl-4 container-upload-logo">*}
+                {*                    <p style="color: #e07047">Upload Logo</p>*}
+                {*                    <form  class="upload-image-form" method="post" enctype="multipart/form-data">*}
+                {*                        <div class="row">*}
+                {*                            <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">*}
+                {*                                <label for="">Upload image</label>*}
+                {*                                <input type="file" name="upload_image" id="upload-image" class="form-control" accept="image/*">*}
+                {*                            </div>*}
 
-{*                            <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">*}
-{*                                <label for=""class="text-white">Upload image</label>*}
-{*                                <button type="submit" class="form-control btn upload-image-btn" name="btn_upload_image" >Save</button>*}
-{*                            </div>*}
-{*                        </div>*}
-{*                    </form>*}
+                {*                            <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">*}
+                {*                                <label for=""class="text-white">Upload image</label>*}
+                {*                                <button type="submit" class="form-control btn upload-image-btn" name="btn_upload_image" >Save</button>*}
+                {*                            </div>*}
+                {*                        </div>*}
+                {*                    </form>*}
 
-{*                </div>*}
+                {*                </div>*}
 
                 <div class="container-fluid bg-white pt-4 pb-4 pl-4 container-contact-detail">
                     <p style="color: #e07047">Contact detail</p>
-                    <form  class="contact-details-form" method="post">
+                    <form class="contact-details-form" method="post">
+                        {*  *}
                         <div class="row">
                             <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                                <label for="">Contact person</label>
-                                <input type="text" name="contact_person" id="contact-person" class="form-control">
+                                <label for="">Store Name</label>
+                                <input type="text" name="store_name" id="store-name" value="{$store['name']}"
+                                    class="form-control">
+                            </div>
+                            <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                                <label for="">Frist Name</label>
+                                <input type="text" name="first_name" id="first-name" value="{$store['firstName']}"
+                                    class="form-control">
+                            </div>
+                            <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                                <label for="">Last Name</label>
+                                <input type="text" name="last_name" id="last-name" value="{$store['lastName']}"
+                                    class="form-control">
+                            </div>
+                            <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                                <label for="">Email</label>
+                                <input type="text" name="email" id="email" value="{$store['email']}"
+                                    class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                                <label for="">Address</label>
+                                <input type="text" name="address" id="address" value="{$store['address1']}"
+                                    class="form-control">
+                            </div>
+
+                            <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                                <label for="">Country</label>
+                                <input type="text" name="country" id="country" value="{$store['country']}"
+                                    class="form-control">
+                            </div>
+
+                            <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                                <label for="">City</label>
+                                <input type="text" name="city" id="city" value="{$store['city']}" class="form-control">
+                            </div>
+
+                            <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                                <label for="">Postal Code</label>
+                                <input type="text" name="zip" id="zip" value="{$store['zipCode']}" class="form-control">
+                            </div>
+
+
+                        </div>
+                        {*  *}
+                        <div class="row">
+                            <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                                <label for="">Country Code</label>
+                                <input type="text" name="country_code" id="country-code" value="{$store['countryCode']}"
+                                    class="form-control">
                             </div>
                             <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
                                 <label for="">Phone</label>
-                                <input type="text" name="phone" id="contact-phone" class="form-control">
+                                <input type="text" name="mobile" id="mobile" value="{$store['mobile']}"
+                                    class="form-control">
                             </div>
-                            <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                                <label for="">Language</label>
-                                <input type="text" name="language" id="contact-language" class="form-control">
-                            </div>
-                            <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                                <label for=""class="text-white">Contact person</label>
-                                <button type="submit" class="form-control btn contact-detail-btn" name="btn_contact_save" >Save</button>
+
+                            <div class="row">
+                                <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                                    <label for="" class="text-white">Contact person</label>
+                                    <button type="submit" class="form-control btn contact-detail-btn"
+                                        name="btn_contact_save">Update</button>
+                                </div>
                             </div>
                         </div>
+                        {*  *}
+
                     </form>
 
                 </div>
 
                 <div class="container-fluid bg-white pt-4 pb-4 pl-4 mt-4 container-email-address">
                     <p style="color: #e07047">Email address</p>
-{*                    <div class="email-verification-section"></div>*}
+                    {*                    <div class="email-verification-section"></div>*}
                     {foreach $api_email_addresses as $api_email_address}
                         <form method="post" class="resend-verification-form">
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
                                     <label for="">Email</label>
-                                    <input type="text" name="verification_email" value="{$api_email_address['email']}" class="form-control" disabled style="border: unset; background-color: white;">
+                                    <input type="text" name="verification_email" value="{$api_email_address['email']}"
+                                        class="form-control" disabled style="border: unset; background-color: white;">
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-2">
                                     <label for="">Role</label>
-                                    <input type="text" name="verification_role" value="{$api_email_address['role']}" class="form-control" disabled style="border: unset; background-color: white;">
+                                    <input type="text" name="verification_role" value="{$api_email_address['role']['name']}"
+                                        class="form-control" disabled style="border: unset; background-color: white;">
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-2">
                                     <label for="">Company</label>
-                                    <input type="text" name="verification_role" value="" disabled style="border: unset; background-color: white;">
+                                    <input type="text" name="verification_role" value="{$store['name']}" disabled
+                                        style="border: unset; background-color: white;">
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-2">
                                     <label for="">Status</label>
-                                    <input type="text" name="verification_role" value="" disabled style="border: unset; background-color: white;">
+                                    <input type="text" name="verification_role"
+                                        value="{($api_email_address['active'] == 1) ? 'Active': 'In-active'}" disabled
+                                        style="border: unset; background-color: white;">
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
                                     <label for="" class="text-white">Status</label>
-                                    <button type="submit" name="btn_resend_verification" class="btn form-control email-address-resend-verification">Resend verification</button>
+                                    <button type="submit" name="btn_resend_verification"
+                                        class="btn form-control email-address-resend-verification">Resend
+                                        verification</button>
                                 </div>
                             </div>
                         </form>
@@ -108,7 +168,8 @@
 
                             <div class="col-xs-12 col-sm-12 col-md-2 col-lg-4">
                                 <label for="" class="text-white">Add new role</label>
-                                <button type="submit" class="form-control btn mt-4 email-address-add" name="update_email_address">Add</button>
+                                <button type="submit" class="form-control btn mt-4 email-address-add"
+                                    name="update_email_address">Add</button>
                             </div>
                         </div>
                     </form>
@@ -131,8 +192,9 @@
                                 <input type="password" class="form-control" name="confirm_password">
                             </div>
                             <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                                <label for=""class="text-white">Contact person</label>
-                                <button type="submit" name="change_password" class="form-control btn contact-change-password">Save</button>
+                                <label for="" class="text-white">Contact person</label>
+                                <button type="submit" name="change_password"
+                                    class="form-control btn contact-change-password">Save</button>
                             </div>
                         </div>
                     </form>
@@ -142,22 +204,26 @@
                     <p style="color: #e07047">Delete account</p>
                     <div style="display: flex;">
                         <span class="material-icons" style="color: #e07047;  padding-right: 5px;">info</span>
-                        <p style="color: #b1b1b1;" >Once you request your account to be deleted you have until November 29. 2020 to keep this account</p>
+                        <p style="color: #b1b1b1;">Once you request your account to be deleted you have until November
+                            29. 2020 to keep this account</p>
                     </div>
                     <div class="row">
                         <div class="col-lg-9">
-                            <p style="color: #b1b1b1;" >Please note:</p>
+                            <p style="color: #b1b1b1;">Please note:</p>
                             <ul>
-                                <li style="color: #b1b1b1;" >You will not be able to create shipping anymore</li>
-                                <li style="color: #b1b1b1;" >All you account data will be permanently removed in 6 months</li>
-                                <li style="color: #b1b1b1;" >We recommend you to export you data before deleting this account</li>
+                                <li style="color: #b1b1b1;">You will not be able to create shipping anymore</li>
+                                <li style="color: #b1b1b1;">All you account data will be permanently removed in 6 months
+                                </li>
+                                <li style="color: #b1b1b1;">We recommend you to export you data before deleting this
+                                    account</li>
                             </ul>
                         </div>
 
                         <form method="post" class="delete-account-form">
                             <div class="col-lg-3">
                                 <input type="hidden" name="_id">
-                                <button type="submit" name="btn_delete_account" class="btn form-control delete-account-btn">Delete account</button>
+                                <button type="submit" name="btn_delete_account"
+                                    class="btn form-control delete-account-btn">Delete account</button>
                             </div>
                         </form>
                     </div>
@@ -225,11 +291,13 @@
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                                 <label for="">Warehouse name</label>
-                                <input type="text" id="warehouse-name" name="warehouse_name" class="form-control add-new-warehouse-input" >
+                                <input type="text" id="warehouse-name" name="warehouse_name"
+                                    class="form-control add-new-warehouse-input">
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                                 <label for="">Warehouse address</label>
-                                <input type="text" class="form-control add-new-warehouse-input" name="warehouse_address" id="warehouse-address">
+                                <input type="text" class="form-control add-new-warehouse-input" name="warehouse_address"
+                                    id="warehouse-address">
 
                                 {*                    hidden*}
                                 <input type="hidden" name="warehouse_lat" id="warehouse-lat">
@@ -243,7 +311,8 @@
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
                                 <label for="" class="text-white">Warehouse</label>
-                                <button type="submit" class="form-control btn btn-default add-new-warehouse-btn" name="add_new_warehouse_btn">Save</button>
+                                <button type="submit" class="form-control btn btn-default add-new-warehouse-btn"
+                                    name="add_new_warehouse_btn">Save</button>
                             </div>
                         </div>
                     </form>
@@ -282,7 +351,8 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
 
             </div>
             <div class="modal-body">
@@ -301,14 +371,13 @@
                         </div>
                     </div>
                     <div id="pac-container">
-                        <input id="pac-input" type="text"
-                               placeholder="Enter a location">
+                        <input id="pac-input" type="text" placeholder="Enter a location">
                     </div>
                 </div>
                 <div id="map"></div>
                 <div id="infowindow-content">
                     <img src="" width="16" height="16" id="place-icon">
-                    <span id="place-name"  class="title"></span><br>
+                    <span id="place-name" class="title"></span><br>
                     <span id="place-address"></span>
                 </div>
             </div>
@@ -319,4 +388,6 @@
     </div>
 </div>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXXUe1UPwcYKHx8L3drP_vJks8zl9kla4&libraries=places&callback=initMap" type="text/javascript"></script>
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXXUe1UPwcYKHx8L3drP_vJks8zl9kla4&libraries=places&callback=initMap"
+type="text/javascript"></script>

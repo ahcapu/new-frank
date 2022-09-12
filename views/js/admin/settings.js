@@ -114,13 +114,13 @@ $(document).ready(function () {
         e.preventDefault();
         $form = $(this);
         $.ajax({
-            url: '../modules/frank/ajax/postAjax.php',
+            url: '../modules/frank/ajax/updateContactDetailAjax.php',
             method: 'POST',
             data: $form.serialize(),
             success: function(response) {
                 response = JSON.parse(response);
-                console.log(response.status);
                 if (response.status === 200) {
+                    console.log(response.data);
                     loadContact();
                     $(".contact-details-form")[0].reset();
                     e.stopPropagation();
