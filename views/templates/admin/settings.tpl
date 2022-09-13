@@ -21,25 +21,6 @@
     <div id="ctr-1-account" class="container-fluid container-account ctr-1 ctr-active">
         <div class="row justify-content-around flex-column-reverse flex-xs-row flex-sm-row">
             <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 mt-5 pr-4 pb-4">
-
-                {*                <div class="container-fluid bg-white pt-4 pb-4 pl-4 container-upload-logo">*}
-                {*                    <p style="color: #e07047">Upload Logo</p>*}
-                {*                    <form  class="upload-image-form" method="post" enctype="multipart/form-data">*}
-                {*                        <div class="row">*}
-                {*                            <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">*}
-                {*                                <label for="">Upload image</label>*}
-                {*                                <input type="file" name="upload_image" id="upload-image" class="form-control" accept="image/*">*}
-                {*                            </div>*}
-
-                {*                            <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">*}
-                {*                                <label for=""class="text-white">Upload image</label>*}
-                {*                                <button type="submit" class="form-control btn upload-image-btn" name="btn_upload_image" >Save</button>*}
-                {*                            </div>*}
-                {*                        </div>*}
-                {*                    </form>*}
-
-                {*                </div>*}
-
                 <div class="container-fluid bg-white pt-4 pb-4 pl-4 container-contact-detail">
                     <p style="color: #e07047">Contact detail</p>
                     <form class="contact-details-form" method="post">
@@ -47,60 +28,66 @@
                         <div class="row">
                             <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
                                 <label for="">Store Name</label>
-                                <input type="text" name="store_name" id="store-name" value="{$store['name']}"
+                                <input type="text" name="store_name" id="store-name"
                                     class="form-control">
                             </div>
                             <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
                                 <label for="">Frist Name</label>
-                                <input type="text" name="first_name" id="first-name" value="{$store['firstName']}"
+                                <input type="text" name="first_name" id="first-name"
                                     class="form-control">
                             </div>
                             <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
                                 <label for="">Last Name</label>
-                                <input type="text" name="last_name" id="last-name" value="{$store['lastName']}"
+                                <input type="text" name="last_name" id="last-name"
                                     class="form-control">
                             </div>
                             <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
                                 <label for="">Email</label>
-                                <input type="text" name="email" id="email" value="{$store['email']}"
+                                <input type="text" name="email" id="email"
                                     class="form-control">
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
                                 <label for="">Address</label>
-                                <input type="text" name="address" id="address" value="{$store['address1']}"
+                                <input type="text" name="address" id="store-address"
                                     class="form-control">
                             </div>
 
                             <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
                                 <label for="">Country</label>
-                                <input type="text" name="country" id="country" value="{$store['country']}"
+                                <input type="text" name="country" id="store-country"
                                     class="form-control">
                             </div>
 
                             <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
                                 <label for="">City</label>
-                                <input type="text" name="city" id="city" value="{$store['city']}" class="form-control">
+                                <input type="text" name="city" id="store-city" class="form-control">
                             </div>
 
                             <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
                                 <label for="">Postal Code</label>
-                                <input type="text" name="zip" id="zip" value="{$store['zipCode']}" class="form-control">
+                                <input type="text" name="zip" id="store-zip" class="form-control">
                             </div>
 
+                                                            {*                    hidden*}
+                                <input type="hidden" name="store_lat" id="store-lat">
+                                <input type="hidden" name="store_lng" id="store-lng">
+                                <input type="hidden" name="store_state" id="store-state">
+
+                                {*                    hidden-end*}
 
                         </div>
                         {*  *}
                         <div class="row">
                             <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
                                 <label for="">Country Code</label>
-                                <input type="text" name="country_code" id="country-code" value="{$store['countryCode']}"
+                                <input type="text" name="country_code" id="country-code"
                                     class="form-control">
                             </div>
                             <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
                                 <label for="">Phone</label>
-                                <input type="text" name="mobile" id="mobile" value="{$store['mobile']}"
+                                <input type="text" name="mobile" id="mobile"
                                     class="form-control">
                             </div>
 
@@ -121,28 +108,28 @@
                 <div class="container-fluid bg-white pt-4 pb-4 pl-4 mt-4 container-email-address">
                     <p style="color: #e07047">Email address</p>
                     {*                    <div class="email-verification-section"></div>*}
-                    {foreach $api_email_addresses as $api_email_address}
+                    {* {foreach $api_email_addresses as $api_email_address}
                         <form method="post" class="resend-verification-form">
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
                                     <label for="">Email</label>
-                                    <input type="text" name="verification_email" value="{$api_email_address['email']}"
+                                    <input type="text" name="verification_email" id="verification-email"
                                         class="form-control" disabled style="border: unset; background-color: white;">
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-2">
                                     <label for="">Role</label>
-                                    <input type="text" name="verification_role" value="{$api_email_address['role']['name']}"
+                                    <input type="text" name="verification_role" id="verification-role"
                                         class="form-control" disabled style="border: unset; background-color: white;">
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-2">
                                     <label for="">Company</label>
-                                    <input type="text" name="verification_role" value="{$store['name']}" disabled
+                                    <input type="text" name="verification_store_name" id="verification-store-name" disabled
                                         style="border: unset; background-color: white;">
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-2">
                                     <label for="">Status</label>
-                                    <input type="text" name="verification_role"
-                                        value="{($api_email_address['active'] == 1) ? 'Active': 'In-active'}" disabled
+                                    <input type="text" name="verification_is_store_active" id="verification-is-store-active"
+                                        disabled
                                         style="border: unset; background-color: white;">
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
@@ -153,7 +140,8 @@
                                 </div>
                             </div>
                         </form>
-                    {/foreach}
+                    {/foreach} *}
+                    <div id="store-users"></div>
                     <form method="post" class="update-email-address-form">
                         <div class="row mt-4 pr-4">
                             <div class="col-xs-12 col-sm-12 col-md-5 col-lg-4">

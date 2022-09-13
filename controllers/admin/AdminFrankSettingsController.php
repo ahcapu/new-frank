@@ -37,7 +37,7 @@ class AdminFrankSettingsController extends ModuleAdminController
         $this->context->smarty->assign(
             array(
                 'api_email_addresses' => $api_email_addresses['data']['emailAddresses'],
-                'store' => $api_email_addresses['data'],
+                // 'store' => $api_email_addresses['data'],
                 'shipping' => $shipping,
                 'returns' => $returns,
                 'settings' => $settings,

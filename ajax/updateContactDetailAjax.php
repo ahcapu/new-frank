@@ -30,6 +30,9 @@ if (
         'zipCode' => $_POST['zip'],
         'countryCode' => $_POST['country_code'],
         'mobile' => $_POST['mobile'],
+        'location1' => array(
+            'coordinates' => [(float)$_POST['store_lng'], (float)$_POST['store_lat']]
+        )
     );
     $res = $frank_api->doCurlRequest('stores/updateContactDetails', $params, Configuration::get('FRANK_TOKEN'));
     echo $res;

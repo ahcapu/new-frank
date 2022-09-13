@@ -9,17 +9,58 @@ $(document).ready(function () {
             success: function(response){
                 response = JSON.parse(response);
                 if (response.status === 200) {
-                    response = response.data.contactDetail;
                     if (response) {
-                        document.getElementById('contact-person').value = response.name;
-                        document.getElementById('contact-phone').value = response.mobile;
-                        document.getElementById('contact-language').value = response.language;
+                        response = response.data;
+                        document.getElementById('store-name').value = response.name;
+                        document.getElementById('first-name').value = response.firstName;
+                        document.getElementById('last-name').value = response.lastName;
+                        document.getElementById('email').value = response.email;
+                        document.getElementById('store-address').value = response.address1;
+                        document.getElementById('store-country').value = response.country;
+                        document.getElementById('store-city').value = response.city;
+                        document.getElementById('store-zip').value = response.zipCode;
+                        document.getElementById('country-code').value = response.countryCode;
+                        document.getElementById('mobile').value = response.mobile;
+                        document.getElementById('store-lat').value = response.location1.coordinates[1];
+                        document.getElementById('store-lng').value = response.location1.coordinates[0];
+
+                        $('#store-users').html('');
+                        let html = '';
+                        for (let i = 0; i < response.emailAddresses.length; i++) {
+                            const res = response.emailAddresses[i];
+                            html +='<form method="post" class="resend-verification-form">';
+                            html +='<div class="row">';
+                            html +='<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">';
+                            html +='<label for="">Email</label>';
+                            html +=`<input type="text" name="verification_email" value="${res.email}" class="form-control" disabled style="border: unset; background-color: white;">`;
+                            html +='</div>';
+                            html +='<div class="col-xs-12 col-sm-12 col-md-3 col-lg-2">';
+                            html +='<label for="">Role</label>';
+                            html +=`<input type='text' name='verification_role' value='${res.role.name}' class='form-control' disabled style='border: unset; background-color: white;'>`;
+                            html +='</div>';
+                            html +='<div class="col-xs-12 col-sm-12 col-md-3 col-lg-2">';
+                            html +='<label for="">Company</label>';
+                            html +=`<input type="text" name="verification_company" value="${response.name}" disabled style="border: unset; background-color: white;">`;
+                            html +='</div>';
+                            html +='<div class="col-xs-12 col-sm-12 col-md-3 col-lg-2">';
+                            html +='<label for="">Status</label>';
+                            html +=`<input type="text" name="verification_status" value="${res.active ? 'Active': 'In-active'}" disabled style="border: unset; background-color: white;">`;
+                            html +='</div>';
+                            html +='<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">';
+                            html +='<label for="" class="text-white">Status</label>';
+                            html +='<button type="submit" name="btn_resend_verification" class="btn form-control email-address-resend-verification">Resend verification</button>';
+                            html +='</div>';
+                            html +='</div>';
+                            html +='</form>';
+                        }
+
+                        $('#store-users').append(html);
                     }
                 }
             }
         });
     }
-    loadEmailVerificationSection();
+    // loadEmailVerificationSection();
     function loadEmailVerificationSection() {
         $.ajax({
             url: '../modules/frank/ajax/emailVerificationSectionAjax.php',
@@ -120,7 +161,6 @@ $(document).ready(function () {
             success: function(response) {
                 response = JSON.parse(response);
                 if (response.status === 200) {
-                    console.log(response.data);
                     loadContact();
                     $(".contact-details-form")[0].reset();
                     e.stopPropagation();
@@ -379,6 +419,23 @@ $(document).ready(function () {
         console.log(addressArr);
     });
 
+    
+    $('#store-address').keyup(function(){
+        $('#myModal').modal('show');
+        // alert(123);
+    });
+
+    $('#dismiss-button').click(function(){
+        // var address =  $('#pac-input').val();
+        let address = addressArr[1] ? addressArr[0] + ' '+ addressArr[1] : addressArr[0];
+        $('#store-address').val(address);
+        $('#store-city').val(addressArr[2]);
+        $('#store-state').val(addressArr[4]);
+        $('#store-country').val(addressArr[5]);
+        $('#store-zip').val(addressArr[6]);
+        console.log(addressArr);
+    });
+
 });
 
 
@@ -472,6 +529,9 @@ function initMap() {
         // console.log('longitude ',marker.position.lng());
         document.getElementById('warehouse-lat').value = marker.position.lat();
         document.getElementById('warehouse-lng').value = marker.position.lng();
+
+        document.getElementById('store-lat').value = marker.position.lat();
+        document.getElementById('store-lng').value = marker.position.lng();
         // console.log(map)
         infowindow.open(map, marker);
     });
