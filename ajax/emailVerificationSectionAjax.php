@@ -12,4 +12,9 @@ $contactDetails = json_decode($frank_api->getRequests('stores/myprofile/' . Conf
 if ($contactDetails['status'] === 200) {
     echo json_encode($contactDetails['data']['emailAddresses']);
     exit;
+} else {
+    $res = ['status' => 400, 'message' => 'some thing went wrong'];
+    $res = json_encode($res);
+    echo $res;
+    exit;
 }

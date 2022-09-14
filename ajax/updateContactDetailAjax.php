@@ -30,12 +30,15 @@ if (
         'zipCode' => $_POST['zip'],
         'countryCode' => $_POST['country_code'],
         'mobile' => $_POST['mobile'],
-        'location1' => array(
-            'coordinates' => [(float)$_POST['store_lng'], (float)$_POST['store_lat']]
-        )
+        'location1' => ['latitude' => $_POST['store_lat'], 'longitude' => $_POST['store_lng'] ],
     );
     $res = $frank_api->doCurlRequest('stores/updateContactDetails', $params, Configuration::get('FRANK_TOKEN'));
     echo $res;
     exit;
 //    echo json_encode(['status' => 200]);
+} else {
+    $res = ['status' => 400, 'message' => 'parameters are missing'];
+    $res = json_encode($res);
+    echo $res;
+    exit;
 }

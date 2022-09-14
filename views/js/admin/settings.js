@@ -170,11 +170,12 @@ $(document).ready(function () {
                         message: "User added successfully!"
                     });
                 } else {
+                    console.log(true);
                     e.stopPropagation();
                     return $.growl.error({
                         title: "",
                         size: "large",
-                        message: "Some thing went wrong"
+                        message: response.message
                     });
                 }
             },

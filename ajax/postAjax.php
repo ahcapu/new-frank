@@ -1,9 +1,9 @@
 <?php
 
-require_once ('../../../config/config.inc.php');
-require_once ('../../../init.php');
-require_once ('../frank.php');
-require_once ('../api/FrankApi.php');
+require_once('../../../config/config.inc.php');
+require_once('../../../init.php');
+require_once('../frank.php');
+require_once('../api/FrankApi.php');
 
 
 $frank_api = new FrankApi();
@@ -30,14 +30,25 @@ if (!empty($_POST['add_new_email_address']) && !empty($_POST['add_new_role'])) {
     echo $res;
     exit;
 }
+else {
+    $res = ['status' => 400, 'message' => 'some thing went wrong'];
+    $res = json_encode($res);
+    echo $res;
+    exit;
+}
 
-if (!empty($_POST['verification_email']) ) {
+if (!empty($_POST['verification_email'])) {
     $params = array(
         'email' => $_POST['verification_email'],
         'role' => $_POST['verification_role']
     );
-    $res = $frank_api->doCurlRequest('stores/resendVerification', $params, Configuration::get('FRANK_TOKEN'));
-//    echo json_encode(['status' => 200]);
+    $res = $frank_api->doCurlRequest('stores/resendVerification', $params, Configuration::get('FRANK_TOKEN')); //    echo json_encode(['status' => 200]);
+    echo $res;
+    exit;
+}
+else {
+    $res = ['status' => 400, 'message' => 'some thing went wrong'];
+    $res = json_encode($res);
     echo $res;
     exit;
 }
@@ -52,4 +63,16 @@ if (!empty($_POST['new_password']) && !empty($_POST['confirm_password']) && !emp
         echo $res;
         exit;
     }
+    else {
+        $res = ['status' => 400, 'message' => 'some thing went wrong'];
+        $res = json_encode($res);
+        echo $res;
+        exit;
+    }
+}
+else {
+    $res = ['status' => 400, 'message' => 'some thing went wrong'];
+    $res = json_encode($res);
+    echo $res;
+    exit;
 }

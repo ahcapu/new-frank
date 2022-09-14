@@ -28,46 +28,40 @@
                         <div class="row">
                             <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
                                 <label for="">Store Name</label>
-                                <input type="text" name="store_name" id="store-name"
-                                    class="form-control">
+                                <input type="text" name="store_name" id="store-name" readonly class="form-control">
                             </div>
                             <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
                                 <label for="">Frist Name</label>
-                                <input type="text" name="first_name" id="first-name"
-                                    class="form-control">
+                                <input type="text" name="first_name" id="first-name" readonly class="form-control">
                             </div>
                             <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
                                 <label for="">Last Name</label>
-                                <input type="text" name="last_name" id="last-name"
-                                    class="form-control">
+                                <input type="text" name="last_name" id="last-name" readonly class="form-control">
                             </div>
                             <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
                                 <label for="">Email</label>
-                                <input type="text" name="email" id="email"
-                                    class="form-control">
+                                <input type="text" name="email" id="email" readonly class="form-control">
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
                                 <label for="">Address</label>
-                                <input type="text" name="address" id="store-address"
-                                    class="form-control">
+                                <input type="text" name="address" id="store-address" class="form-control">
                             </div>
 
                             <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
                                 <label for="">Country</label>
-                                <input type="text" name="country" id="store-country"
-                                    class="form-control">
+                                <input type="text" name="country" id="store-country" readonly class="form-control">
                             </div>
 
                             <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
                                 <label for="">City</label>
-                                <input type="text" name="city" id="store-city" class="form-control">
+                                <input type="text" name="city" id="store-city" readonly class="form-control">
                             </div>
 
                             <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
                                 <label for="">Postal Code</label>
-                                <input type="text" name="zip" id="store-zip" class="form-control">
+                                <input type="text" name="zip" id="store-zip" readonly class="form-control">
                             </div>
 
                                                             {*                    hidden*}
@@ -82,13 +76,11 @@
                         <div class="row">
                             <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
                                 <label for="">Country Code</label>
-                                <input type="text" name="country_code" id="country-code"
-                                    class="form-control">
+                                <input type="text" name="country_code" id="country-code" readonly class="form-control">
                             </div>
                             <div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
                                 <label for="">Phone</label>
-                                <input type="text" name="mobile" id="mobile"
-                                    class="form-control">
+                                <input type="text" name="mobile" id="mobile" readonly class="form-control">
                             </div>
 
                             <div class="row">
