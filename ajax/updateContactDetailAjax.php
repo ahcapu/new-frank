@@ -18,7 +18,9 @@ if (
     !empty($_POST['city']) &&
     !empty($_POST['zip']) &&
     !empty($_POST['country_code']) &&
-    !empty($_POST['mobile'])) {
+    !empty($_POST['mobile']) &&
+    !empty($_POST['store_lat']) &&
+    !empty($_POST['store_lng'])) {
     $params = array(
         'name' => $_POST['store_name'],
         'firstName' => $_POST['first_name'],
@@ -30,12 +32,14 @@ if (
         'zipCode' => $_POST['zip'],
         'countryCode' => $_POST['country_code'],
         'mobile' => $_POST['mobile'],
-        'location1' => ['latitude' => $_POST['store_lat'], 'longitude' => $_POST['store_lng'] ],
+        // 'location1' => ['coordinates' => ['latitude' => (float)$_POST['store_lat'], 'longitude' => (float)$_POST['store_lng'] ], 'type' => 'Point'],
+        'location1' => ['coordinates' => [(float)$_POST['store_lng'], (float)$_POST['store_lat'] ], 'type' => 'Point'],
     );
+    // echo json_encode($params);
     $res = $frank_api->doCurlRequest('stores/updateContactDetails', $params, Configuration::get('FRANK_TOKEN'));
     echo $res;
+    
     exit;
-//    echo json_encode(['status' => 200]);
 } else {
     $res = ['status' => 400, 'message' => 'parameters are missing'];
     $res = json_encode($res);

@@ -167,10 +167,9 @@ $(document).ready(function () {
                     return $.growl.notice({
                         title: "",
                         size: "large",
-                        message: "User added successfully!"
+                        message: "Store address updated successfully!"
                     });
                 } else {
-                    console.log(true);
                     e.stopPropagation();
                     return $.growl.error({
                         title: "",
