@@ -32,7 +32,6 @@ if (
         'zipCode' => $_POST['zip'],
         'countryCode' => $_POST['country_code'],
         'mobile' => $_POST['mobile'],
-        // 'location1' => ['coordinates' => ['latitude' => (float)$_POST['store_lat'], 'longitude' => (float)$_POST['store_lng'] ], 'type' => 'Point'],
         'location1' => ['coordinates' => [(float)$_POST['store_lng'], (float)$_POST['store_lat'] ], 'type' => 'Point'],
     );
     // echo json_encode($params);

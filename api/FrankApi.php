@@ -7,10 +7,10 @@ class FrankApi
     }
 //    AWS
 
-    private $baseUrl = 'https://server.frankme.com/api/v1/';
+    // private $baseUrl = 'https://server.frankme.com/api/v1/';
 
 //    Local
-    // private $baseUrl = 'http://localhost:3008/api/v1/';
+    private $baseUrl = 'http://localhost:3008/api/v1/';
 
     public function uploadImage($url, $data, $token = null, $method = "POST")
     {
@@ -64,7 +64,6 @@ class FrankApi
     {
         $curl = curl_init($this->baseUrl . $url);
         curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'PATCH');
-        // curl_setopt($curl, CURLOPT_POST, true);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
         if ($token != null){
@@ -109,7 +108,6 @@ class FrankApi
     {
         $curl = curl_init($this->baseUrl . $url);
         curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "DELETE");
-//        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_HTTPHEADER, array(
             "Authorization: Bearer " . $token,
             "Content-Type: application/json"
